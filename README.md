@@ -1,34 +1,41 @@
-' ==============================================================================
-' 1. DASHBOARD LOOKUPS & KPI CARDS (Sheet4 / Dashboard)
-' ==============================================================================
+# Advanced Excel Biopharmaceutical Cold-Chain & OTIF Analytics Tracker
 
-' Fetch Product Unit Price dynamically based on Product ID in B1:
-=XLOOKUP(B1, Dim_Biotherapeutic[product_id], Dim_Biotherapeutic[unit_price], "Not Found")
+An enterprise-grade supply chain analytics workbook designed in Microsoft Excel to model, monitor, and evaluate biopharmaceutical shipments, thermal compliance, and On-Time In-Full (OTIF) delivery SLAs.
 
-' Fetch Assigned Hub Name based on Shipment ID in B5:
-=XLOOKUP(B5, Fact_Shipments[shipment_id], XLOOKUP(Fact_Shipments[hub_id], Dim_Distribution_Hub[Hub_ID], Dim_Distribution_Hub[Hub_Name]))
+---
 
-' Fetch Temperature Compliance Alert based on Shipment ID in B5:
-=XLOOKUP(B5, Fact_Shipments[shipment_id], Fact_Shipments[temp_compliance])
+## Executive Dashboard & Analytics Preview
 
-' Fetch Delivery Status based on Shipment ID in B5:
-=XLOOKUP(B5, Fact_Shipments[shipment_id], Fact_Shipments[delivery_status])
+> *Place your dashboard screenshot (`dashboard_preview.png`) in the root directory to display here.*
 
-' Executive KPI Summary Cards:
-Total Shipments (Cell D2)     : =COUNTA(Fact_Shipments[shipment_id])
-OTIF Rate (Cell E2)           : =COUNTIF(Fact_Shipments[delivery_status], "Delivered-OTIF") / COUNTA(Fact_Shipments[shipment_id])
-Compliance Rate (Cell F2)     : =COUNTIF(Fact_Shipments[temp_compliance], "Compliant") / COUNTA(Fact_Shipments[shipment_id])
+![Dashboard Preview](dashboard_preview.png)
 
+---
 
-' ==============================================================================
-' 2. CONDITIONAL FORMATTING RULES (Fact_Shipments Sheet)
-' ==============================================================================
+## Executive Summary & Project Goal
+In biopharmaceutical supply chains, keeping biotherapeutics (such as monoclonal antibodies, vaccines, and cell therapies) within strict thermal windows during transit is critical. Temperature excursions risk batch degradation, compliance violations, and severe financial losses.
 
-' Rule 1: Temperature Excursion Alert (Red Fill)
-Formula: =$F2="Excursion"
+This project implements a normalized relational data model in **Advanced Excel** to automate cross-table data lookups, flag cold-chain breaches in real time via formula-driven alerts, monitor delivery performance metrics, and deliver executive-level analytics.
 
-' Rule 2: Compliant Batch (Green Fill)
-Formula: =$F2="Compliant"
+---
 
-' Rule 3: SLA Delivery Delay Alert (Light Red Fill)
-Formula: =$E2="Delayed"
+## Workbook Architecture & Sheet Mapping
+
+The workbook is structured into a clean relational database schema separating master dimension datasets from operational transaction logs:
+
+| Sheet Name | Original Tab | Role & Contents |
+| :--- | :--- | :--- |
+| **`Dashboard`** | Sheet4 | Executive control panel containing top-level KPI metric cards and interactive lookup controls. |
+| **`Analytics`** | Analytics | Dedicated reporting view housing Pivot Tables and visual PivotCharts. |
+| **`Fact_Shipments`** | Sheet6 | Primary transaction log containing shipment IDs, dates, `XLOOKUP` formulas, and alerts. |
+| **`Dim_Biotherapeutic`** | Sheet10 | Master reference dimension for product specifications, classes, and thermal limits. |
+| **`Dim_Distribution_Hub`** | Sheet5 | Master reference dimension for logistics hubs, regions, and temperature corridors. |
+
+---
+
+## Advanced Excel Technical Stack & Formulas
+
+### 1. Executive Dashboard & Dynamic Lookups (`Dashboard` Sheet)
+* **Product Price Dynamic Lookup (`B3`):**
+  ```excel
+  =XLOOKUP(B1, Dim_Biotherapeutic[product_id], Dim_Biotherapeutic[unit_price], "Not Found")
