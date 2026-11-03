@@ -1,0 +1,2 @@
+# Advanced-Excel-Biopharmaceutical-Cold-Chain-OTIF-Analytics-Tracker
+Advanced Excel logistics analytics model to, track, and analyze cold-chain biopharmaceutical shipments. The model leverages relational schema design, dynamic array lookups, automated conditional logic, aggregate KPI cards, and PivotTable/PivotChart visual analytics to evaluate temperature compliance and delivery SLAs across distribution corridors.
