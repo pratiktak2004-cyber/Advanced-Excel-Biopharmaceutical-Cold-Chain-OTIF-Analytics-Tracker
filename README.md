@@ -4,12 +4,13 @@ An enterprise-grade supply chain analytics workbook designed in Microsoft Excel 
 
 ---
 
-## Executive Dashboard & Analytics Preview
+## Executive Dashboard & Analytics Previews
 
-> *Place your dashboard screenshot (`dashboard_preview.png`) in the root directory to display here.*
+### Dashboard & KPI Control Panel
+![Dashboard Preview](Screenshot%20(485).png)
 
-![Dashboard Preview](dashboard_preview.png)
-
+### Analytics & PivotChart Reporting
+![Analytics Preview](Screenshot%20(489).png)
 ---
 
 ## Executive Summary & Project Goal
