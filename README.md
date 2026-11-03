@@ -38,4 +38,4 @@ The workbook is structured into a clean relational database schema separating ma
 ### 1. Executive Dashboard & Dynamic Lookups (`Dashboard` Sheet)
 * **Product Price Dynamic Lookup (`B3`):**
   ```excel
-  =XLOOKUP(B1, Dim_Biotherapeutic[product_id], Dim_Biotherapeutic[unit_price], "Not Found")
+  =XLOOKUP(B1, Dim_Biotherapeutic!A2:A3, Dim_Biotherapeutic!F2:F3)
