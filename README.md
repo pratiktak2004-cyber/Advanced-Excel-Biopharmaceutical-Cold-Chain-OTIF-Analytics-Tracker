@@ -1,12 +1,9 @@
 # Advanced-Excel-Biopharmaceutical-Cold-Chain-OTIF-Analytics-Tracker
 Advanced Excel logistics analytics model to, track, and analyze cold-chain biopharmaceutical shipments. The model leverages relational schema design, dynamic array lookups, automated conditional logic, aggregate KPI cards, and PivotTable/PivotChart visual analytics to evaluate temperature compliance and delivery SLAs across distribution corridors.
-# Advanced Excel Biopharmaceutical Cold-Chain & OTIF Analytics Tracker
-
-An enterprise-grade supply chain analytics workbook designed in Microsoft Excel to model, monitor, and evaluate cold-chain biopharmaceutical shipments, thermal compliance, and On-Time In-Full (OTIF) delivery SLAs.
 
 ---
 
-## 📊 Executive Dashboard & Analytics Preview
+## Executive Dashboard & Analytics Preview
 
 > *Place your dashboard screenshot (`dashboard_preview.png`) in the root directory to display here.*
 
@@ -14,14 +11,14 @@ An enterprise-grade supply chain analytics workbook designed in Microsoft Excel 
 
 ---
 
-## 🎯 Executive Summary & Project Goal
+## Executive Summary & Project Goal
 In biopharmaceutical supply chains, keeping biotherapeutics (such as monoclonal antibodies, vaccines, and cell therapies) within strict thermal windows during transit is critical. Temperature excursions risk batch degradation, compliance violations, and severe financial losses.
 
 This project implements a normalized relational data model in **Advanced Excel** to automate cross-table data lookups, flag cold-chain breaches in real time via formula-driven alerts, monitor delivery performance metrics, and deliver executive-level analytics.
 
 ---
 
-## 🛠️ Technical Architecture & Advanced Excel Features
+## Technical Architecture & Advanced Excel Features
 
 ### 1. Relational Data Modeling & Multi-Table Schema
 * Engineered a normalized relational schema separating master dimension datasets from operational logs using native Excel Tables (`Ctrl + T`) for dynamic range expansion and clean structural references.
